@@ -1,7 +1,7 @@
 <?php
 
 class GameController extends WebApp_Controller {
-	$step = 1;
+	protected $step = 1;
 	
 	public function __construct() {
 		$this->step = substr( $_SERVER['REQUEST_URI'], 1 );
