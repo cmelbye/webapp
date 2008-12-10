@@ -1,6 +1,11 @@
 <h2>Form Demo</h2>
 
-<form action="/step2" method="post">
+<?php
+$step = substr( $_SERVER['REQUEST_URI'], 5 );
+$step++;
+?>
+
+<form action="/step<?= $step ?>" method="post">
 	<p>
 		<label for="info">Information to Send</label><br />
 		<input type="text" name="info" value="Hello from the get() method!" />

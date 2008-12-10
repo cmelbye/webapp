@@ -1,7 +1,11 @@
 <?php
 
 class WebApp_Controller {
-	public function __construct() {}
+	protected $method;
+	
+	public function __construct() {
+		$this->method = $_SERVER['REQUEST_METHOD'];
+	}
 	
 	public function execute() {
 		switch( $_SERVER['REQUEST_METHOD'] ) {

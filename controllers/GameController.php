@@ -3,17 +3,15 @@
 class GameController extends WebApp_Controller {
 	protected $step = 1;
 	
-	public function __construct() {
-		$this->step = substr( $_SERVER['REQUEST_URI'], 1 );
-	}
-	
-	public function get() {
-		echo $this->step;
+	public function execute() {
+		$this->execute();
+		
+		if( $this->method == 'POST' )
+			WebApp_Template::render( 'game/result' );
+		
 		WebApp_Template::render( 'game/form' );
 	}
 	
-	public function post() {
-		echo $this->step;
-		WebApp_Template::render( 'game/result' );
-	}
+	public function get() {}
+	public function post() {}
 }
